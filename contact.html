@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Get in touch with Your Name — photography enquiries, collaborations, and conversations." />
+  <title>Contact — Your Name Photography</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📷</text></svg>" />
+</head>
+<body>
+
+<!-- Loader -->
+<div id="loader" role="status" aria-label="Loading">
+  <div class="loader-logo">YN</div>
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+  <p class="loader-text">Contact</p>
+</div>
+
+<!-- Cursor -->
+<div id="cursor-dot"  aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
+
+<!-- Page Transition -->
+<div class="page-transition-overlay" aria-hidden="true"></div>
+
+<!-- ═══════════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════════════ -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Your<span>Name</span></a>
+  <ul class="nav-links" role="list">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="photographs.html">Photographs</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="nav-mobile" role="dialog" aria-label="Mobile navigation">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="photographs.html">Photographs</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     PAGE HERO
+════════════════════════════════════════════════ -->
+<header class="page-hero" role="banner">
+  <div class="page-hero-bg-text" aria-hidden="true">Contact</div>
+  <div>
+    <p class="section-tag reveal">Let's Connect</p>
+    <h1 class="section-title reveal delay-1" style="font-size: clamp(2.5rem, 6vw, 5rem);">
+      Start a<br><em>Conversation</em>
+    </h1>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════
+     CONTACT MAIN
+════════════════════════════════════════════════ -->
+<section class="section-padding" aria-labelledby="contact-heading">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <div class="contact-grid">
+
+      <!-- ─── LEFT: INFO ─────────────────────── -->
+      <div>
+        <p class="section-tag reveal">Reach Out</p>
+        <h2 class="section-title reveal delay-1" id="contact-heading">
+          I'd Love to<br>Hear From <em>You</em>
+        </h2>
+        <div class="divider reveal delay-2"></div>
+        <p class="reveal delay-2" style="font-size: 0.85rem; color: var(--grey-light); line-height: 1.9; max-width: 380px; margin-bottom: 40px;">
+          Whether you'd like to discuss a collaboration, give feedback
+          on my work, or simply share a love of photography — my inbox
+          is always open. I read and respond to every message personally.
+        </p>
+
+        <!-- Contact info items
+             ➜ Replace email, location etc. with your real details -->
+        <div class="reveal delay-3">
+
+          <div class="contact-info-item">
+            <div class="contact-icon" aria-hidden="true">✉</div>
+            <div class="contact-info-text">
+              <h4>Email</h4>
+              <!-- ➜ Replace with your email address -->
+              <p><a href="mailto:hello@yourname.com">hello@yourname.com</a></p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-icon" aria-hidden="true">📍</div>
+            <div class="contact-info-text">
+              <h4>Location</h4>
+              <!-- ➜ Replace with your city / region -->
+              <p>Your City, Your Country</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-icon" aria-hidden="true">⏱</div>
+            <div class="contact-info-text">
+              <h4>Response Time</h4>
+              <p>Usually within 24–48 hours</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Social links -->
+        <div class="reveal delay-4" style="margin-top: 40px;">
+          <p style="font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px;">
+            Follow the Journey
+          </p>
+          <div class="social-links">
+            <!-- ➜ Replace # with your actual social media profile URLs -->
+            <a href="#" class="social-link" aria-label="Instagram" title="Instagram">📸</a>
+            <a href="#" class="social-link" aria-label="500px"     title="500px">⭕</a>
+            <a href="#" class="social-link" aria-label="Flickr"    title="Flickr">📷</a>
+            <a href="#" class="social-link" aria-label="Twitter/X" title="Twitter/X">𝕏</a>
+            <a href="#" class="social-link" aria-label="YouTube"   title="YouTube">▶</a>
+            <a href="#" class="social-link" aria-label="Pinterest" title="Pinterest">P</a>
+          </div>
+        </div>
+
+      </div><!-- /.left -->
+
+      <!-- ─── RIGHT: FORM ───────────────────── -->
+      <div class="reveal delay-2">
+        <div class="contact-form glass-card">
+
+          <!-- Form (static HTML — submits with JS handler below)
+               ➜ For a real backend, replace the JS handler in script.js
+                 with a fetch() to your form API endpoint (Formspree, EmailJS, etc.)
+          -->
+          <form id="contact-form" novalidate>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="contact-name">Name</label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="contact-name"
+                  name="name"
+                  placeholder="Your full name"
+                  required
+                  autocomplete="name"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-email">Email</label>
+                <input
+                  class="form-input"
+                  type="email"
+                  id="contact-email"
+                  name="email"
+                  placeholder="your@email.com"
+                  required
+                  autocomplete="email"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-subject">Subject</label>
+              <input
+                class="form-input"
+                type="text"
+                id="contact-subject"
+                name="subject"
+                placeholder="What's on your mind?"
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-message">Message</label>
+              <textarea
+                class="form-textarea"
+                id="contact-message"
+                name="message"
+                placeholder="Tell me about your idea, project, or just say hello…"
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="form-submit">
+              Send Message
+            </button>
+
+          </form>
+
+          <!-- Success state (shown after submit) -->
+          <div id="form-success" class="form-success" role="status" aria-live="polite">
+            <p style="font-size: 2rem; margin-bottom: 12px;">✓</p>
+            <h3>Message Sent</h3>
+            <p>Thank you for reaching out. I'll be in touch within 24–48 hours.</p>
+          </div>
+
+        </div>
+      </div><!-- /.right -->
+
+    </div><!-- /.contact-grid -->
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     PARALLAX QUOTE
+════════════════════════════════════════════════ -->
+<section class="parallax-section" aria-label="Closing thought">
+  <div class="parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1455218873509-8097305ee378?w=1920&q=80')"></div>
+  <div class="parallax-overlay" aria-hidden="true"></div>
+  <div class="parallax-content reveal">
+    <blockquote>
+      "The best photograph is one that is taken today,<br>
+      in the light that exists right now."
+    </blockquote>
+    <cite>— Your Name</cite>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     FAQ / EXTRA INFO
+════════════════════════════════════════════════ -->
+<section class="section-padding" aria-labelledby="faq-heading">
+  <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+    <p class="section-tag" style="justify-content: center;">Common Questions</p>
+    <h2 class="section-title reveal" id="faq-heading" style="text-align: center;">
+      Good to <em>Know</em>
+    </h2>
+  </div>
+
+  <div style="max-width: 800px; margin: 56px auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+
+    <div class="glass-card reveal delay-1" style="padding: 32px;">
+      <div style="font-size: 1.4rem; margin-bottom: 14px;">📋</div>
+      <h3 style="font-family: var(--font-serif); font-size: 1.1rem; color: var(--white); margin-bottom: 10px; font-weight: 300;">
+        Can I use your photos?
+      </h3>
+      <p style="font-size: 0.75rem; color: var(--grey); line-height: 1.8;">
+        All images on this site are my personal work and remain copyright protected. For licensing or usage enquiries, please get in touch via the contact form above.
+      </p>
+    </div>
+
+    <div class="glass-card reveal delay-2" style="padding: 32px;">
+      <div style="font-size: 1.4rem; margin-bottom: 14px;">🤝</div>
+      <h3 style="font-family: var(--font-serif); font-size: 1.1rem; color: var(--white); margin-bottom: 10px; font-weight: 300;">
+        Do you collaborate?
+      </h3>
+      <p style="font-size: 0.75rem; color: var(--grey); line-height: 1.8;">
+        Absolutely. I'm always open to creative collaborations with other photographers, artists, writers, and brands whose vision aligns with my aesthetic.
+      </p>
+    </div>
+
+    <div class="glass-card reveal delay-1" style="padding: 32px;">
+      <div style="font-size: 1.4rem; margin-bottom: 14px;">🖼</div>
+      <h3 style="font-family: var(--font-serif); font-size: 1.1rem; color: var(--white); margin-bottom: 10px; font-weight: 300;">
+        Are prints available?
+      </h3>
+      <p style="font-size: 0.75rem; color: var(--grey); line-height: 1.8;">
+        Select images from the gallery are available as fine-art prints. Reach out with the image title and your preferred size for availability and pricing.
+      </p>
+    </div>
+
+    <div class="glass-card reveal delay-2" style="padding: 32px;">
+      <div style="font-size: 1.4rem; margin-bottom: 14px;">💬</div>
+      <h3 style="font-family: var(--font-serif); font-size: 1.1rem; color: var(--white); margin-bottom: 10px; font-weight: 300;">
+        Just want to chat?
+      </h3>
+      <p style="font-size: 0.75rem; color: var(--grey); line-height: 1.8;">
+        Photography conversations are always welcome. Whether it's technique, gear, location tips, or post-processing — send a message. I genuinely enjoy the exchange.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <h3>Your<span>Name</span></h3>
+      <p>A personal photography portfolio capturing the beauty of light, nature, and human expression.</p>
+      <div class="social-links" style="margin-top: 28px;">
+        <a href="#" class="social-link" aria-label="Instagram">&#128247;</a>
+        <a href="#" class="social-link" aria-label="500px">&#9673;</a>
+        <a href="#" class="social-link" aria-label="Flickr">&#128248;</a>
+        <a href="#" class="social-link" aria-label="Twitter/X">&#120143;</a>
+        <a href="#" class="social-link" aria-label="YouTube">&#9654;</a>
+      </div>
+    </div>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <h4>Navigation</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="photographs.html">Photographs</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <nav class="footer-nav" aria-label="Gallery categories">
+      <h4>Gallery</h4>
+      <a href="photographs.html">Portrait</a>
+      <a href="photographs.html">Landscape</a>
+      <a href="photographs.html">Wildlife</a>
+      <a href="photographs.html">Macro</a>
+      <a href="photographs.html">Food</a>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">&copy; 2025 Your Name. All rights reserved.</p>
+    <p class="footer-copy" style="font-style: italic; font-family: var(--font-serif);">Made with light &amp; love.</p>
+  </div>
+</footer>
+
+<button id="back-top" aria-label="Back to top">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>

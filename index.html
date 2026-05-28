@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A cinematic photography portfolio showcasing portrait, landscape, wildlife, and fine-art photography." />
+  <title>Your Name — Photography Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Favicon placeholder -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📷</text></svg>" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════
+     LOADER
+════════════════════════════════════════════════ -->
+<div id="loader" role="status" aria-label="Loading">
+  <div class="loader-logo">YN</div>
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+  <p class="loader-text">Photography Portfolio</p>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     CUSTOM CURSOR
+════════════════════════════════════════════════ -->
+<div id="cursor-dot"  aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
+
+<!-- ═══════════════════════════════════════════════
+     PAGE TRANSITION
+════════════════════════════════════════════════ -->
+<div class="page-transition-overlay" aria-hidden="true"></div>
+
+<!-- ═══════════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════════════ -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Your<span>Name</span></a>
+
+  <ul class="nav-links" role="list">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="photographs.html">Photographs</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile menu -->
+<div class="nav-mobile" id="nav-mobile" role="dialog" aria-label="Mobile navigation">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="photographs.html">Photographs</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════ -->
+<section class="hero" aria-label="Hero section">
+  <!-- Particles -->
+  <div class="particles" aria-hidden="true"></div>
+
+  <!-- Slideshow backgrounds
+       ➜ Replace the background-image URLs below with your own hero photos.
+         Use high-resolution images (≥1920px wide) for best quality.
+         You can add more slides by duplicating a .hero-slide div.
+  -->
+  <div class="hero-slideshow" aria-hidden="true">
+    <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80')"></div>
+    <div class="hero-slide"        style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1920&q=80')"></div>
+    <div class="hero-slide"        style="background-image: url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=1920&q=80')"></div>
+    <div class="hero-slide"        style="background-image: url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1920&q=80')"></div>
+  </div>
+
+  <div class="hero-overlay" aria-hidden="true"></div>
+
+  <!-- Profile card
+       ➜ Replace the initials "YN" with your own, or
+         add an <img> tag with your portrait photo:
+         <img src="images/portrait.jpg" alt="Your Name" class="hero-avatar" />
+  -->
+  <div class="hero-profile glass-card">
+    <div class="hero-avatar-placeholder" aria-label="Profile photo">YN</div>
+    <div class="hero-profile-info">
+      <div class="hero-profile-name">Your Name</div>
+      <div class="hero-profile-title">Photographer &amp; Visual Artist</div>
+    </div>
+  </div>
+
+  <!-- Hero text content -->
+  <div class="hero-content">
+    <p class="hero-eyebrow">Photography Portfolio</p>
+    <h1 class="hero-title">
+      Light, Shadow &<br><em>Silence</em>
+    </h1>
+    <p class="hero-subtitle">
+      <span id="typed-text"></span>
+    </p>
+    <div class="hero-cta">
+      <a href="photographs.html" class="btn btn-gold">Explore Gallery</a>
+      <a href="about.html" class="btn-arrow">My Story</a>
+    </div>
+  </div>
+
+  <!-- Slide dots -->
+  <div class="hero-dots" aria-hidden="true">
+    <div class="hero-dot active"></div>
+    <div class="hero-dot"></div>
+    <div class="hero-dot"></div>
+    <div class="hero-dot"></div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="scroll-indicator" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     FEATURED GALLERY
+════════════════════════════════════════════════ -->
+<section class="section-padding" aria-labelledby="featured-heading">
+  <div class="reveal">
+    <p class="section-tag">Selected Works</p>
+    <h2 class="section-title" id="featured-heading">Featured <em>Photographs</em></h2>
+    <p class="section-subtitle">A curated selection from recent explorations across genres and light.</p>
+  </div>
+
+  <!--
+    FEATURED GRID — To customise:
+    • Replace the background-image or add <img> inside .featured-item
+    • Update the caption text
+    • Add / remove .featured-item divs as needed
+  -->
+  <div class="featured-grid reveal delay-2">
+
+    <!-- Large item (spans 2 rows) -->
+    <div class="featured-item" style="background: var(--surface);">
+      <img
+        src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?w=900&q=80"
+        alt="Golden hour portrait"
+        loading="lazy"
+      />
+      <div class="featured-caption">
+        <h4>Golden Hour</h4>
+        <span>Portrait</span>
+      </div>
+    </div>
+
+    <!-- Item 2 -->
+    <div class="featured-item">
+      <img
+        src="https://images.unsplash.com/photo-1455218873509-8097305ee378?w=600&q=80"
+        alt="Mountain landscape"
+        loading="lazy"
+      />
+      <div class="featured-caption">
+        <h4>Above the Clouds</h4>
+        <span>Landscape</span>
+      </div>
+    </div>
+
+    <!-- Item 3 -->
+    <div class="featured-item">
+      <img
+        src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80"
+        alt="Food photography"
+        loading="lazy"
+      />
+      <div class="featured-caption">
+        <h4>Still Life</h4>
+        <span>Food</span>
+      </div>
+    </div>
+
+    <!-- Item 4 -->
+    <div class="featured-item">
+      <img
+        src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=600&q=80"
+        alt="Wildlife photography"
+        loading="lazy"
+      />
+      <div class="featured-caption">
+        <h4>Wild Gaze</h4>
+        <span>Wildlife</span>
+      </div>
+    </div>
+
+    <!-- Item 5 -->
+    <div class="featured-item">
+      <img
+        src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80"
+        alt="Macro photography"
+        loading="lazy"
+      />
+      <div class="featured-caption">
+        <h4>Micro World</h4>
+        <span>Macro</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="text-center reveal delay-3" style="margin-top: 56px;">
+    <a href="photographs.html" class="btn btn-outline">View Full Gallery</a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     STATISTICS
+════════════════════════════════════════════════ -->
+<section class="stats-section" aria-label="Photography statistics">
+  <div class="stats-grid">
+    <div class="stat-item reveal">
+      <div class="stat-number" data-count="6" data-suffix="+">0</div>
+      <p class="stat-label">Years Shooting</p>
+    </div>
+    <div class="stat-item reveal delay-1">
+      <div class="stat-number" data-count="1200" data-suffix="+">0</div>
+      <p class="stat-label">Photos Taken</p>
+    </div>
+    <div class="stat-item reveal delay-2">
+      <div class="stat-number" data-count="15" data-suffix="+">0</div>
+      <p class="stat-label">Countries Visited</p>
+    </div>
+    <div class="stat-item reveal delay-3">
+      <div class="stat-number" data-count="6" data-suffix="">0</div>
+      <p class="stat-label">Genres Explored</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     PARALLAX QUOTE
+════════════════════════════════════════════════ -->
+<section class="parallax-section" aria-label="Inspirational quote">
+  <div class="parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1920&q=80')"></div>
+  <div class="parallax-overlay" aria-hidden="true"></div>
+  <div class="parallax-content reveal">
+    <blockquote>
+      "Photography is the story I fail to put into words."
+    </blockquote>
+    <cite>— Destin Sparks</cite>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     ABOUT TEASER
+════════════════════════════════════════════════ -->
+<section class="section-padding" aria-labelledby="about-teaser-heading">
+  <div class="about-intro">
+    <div class="about-image-wrap reveal-left">
+      <div class="about-image-frame">
+        <!--
+          ➜ Replace with your own portrait image:
+             <img src="images/portrait.jpg" alt="Your Name" />
+          For now a stylish placeholder is shown.
+        -->
+        <div class="img-placeholder">
+          <span style="font-size:3rem; opacity:0.15;">📷</span>
+          <span>Your Portrait Here</span>
+        </div>
+      </div>
+      <div class="about-image-accent"></div>
+    </div>
+
+    <div class="about-text reveal-right">
+      <p class="section-tag">About the Photographer</p>
+      <h2 class="section-title" id="about-teaser-heading">
+        Capturing the <em>Unseen</em><br>World
+      </h2>
+      <div class="divider"></div>
+      <p>
+        Based wherever the light takes me, I'm a passionate photographer
+        drawn to the intersection of stillness and emotion. With a background
+        rooted in natural landscapes and a curiosity for human expression,
+        my lens seeks the extraordinary in the everyday.
+      </p>
+      <p>
+        Whether it's the texture of a dew-covered leaf at dawn, the raw gaze
+        of a wild animal, or the quiet drama of a street at twilight — every
+        frame is a conversation between light and intention.
+      </p>
+      <div style="margin-top: 36px;">
+        <a href="about.html" class="btn btn-outline">Read My Story</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <h3>Your<span>Name</span></h3>
+      <p>A personal photography portfolio capturing the beauty of light, nature, and human expression across the world.</p>
+      <div class="social-links" style="margin-top: 28px;">
+        <a href="#" class="social-link" aria-label="Instagram" title="Instagram">&#128247;</a>
+        <a href="#" class="social-link" aria-label="500px" title="500px">&#9673;</a>
+        <a href="#" class="social-link" aria-label="Flickr" title="Flickr">&#128248;</a>
+        <a href="#" class="social-link" aria-label="Twitter/X" title="Twitter/X">&#120143;</a>
+        <a href="#" class="social-link" aria-label="YouTube" title="YouTube">&#9654;</a>
+      </div>
+    </div>
+
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <h4>Navigation</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="photographs.html">Photographs</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <nav class="footer-nav" aria-label="Gallery categories">
+      <h4>Gallery</h4>
+      <a href="photographs.html">Portrait</a>
+      <a href="photographs.html">Landscape</a>
+      <a href="photographs.html">Wildlife</a>
+      <a href="photographs.html">Macro</a>
+      <a href="photographs.html">Food</a>
+    </nav>
+  </div>
+
+  <div class="footer-bottom">
+    <p class="footer-copy">&copy; 2025 Your Name. All rights reserved.</p>
+    <p class="footer-copy" style="font-style: italic; font-family: var(--font-serif);">Made with light &amp; love.</p>
+  </div>
+</footer>
+
+<!-- Back to Top -->
+<button id="back-top" aria-label="Back to top" title="Back to top">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>

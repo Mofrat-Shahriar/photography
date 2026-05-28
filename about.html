@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About Your Name — photographer, visual artist, and storyteller." />
+  <title>About — Your Name Photography</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📷</text></svg>" />
+</head>
+<body>
+
+<!-- Loader -->
+<div id="loader" role="status" aria-label="Loading">
+  <div class="loader-logo">YN</div>
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+  <p class="loader-text">About</p>
+</div>
+
+<!-- Cursor -->
+<div id="cursor-dot"  aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
+
+<!-- Page Transition -->
+<div class="page-transition-overlay" aria-hidden="true"></div>
+
+<!-- ═══════════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════════════ -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Your<span>Name</span></a>
+  <ul class="nav-links" role="list">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="photographs.html">Photographs</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="nav-mobile" role="dialog" aria-label="Mobile navigation">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="photographs.html">Photographs</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     PAGE HERO
+════════════════════════════════════════════════ -->
+<header class="page-hero" role="banner">
+  <div class="page-hero-bg-text" aria-hidden="true">About</div>
+  <div>
+    <p class="section-tag reveal">The Photographer</p>
+    <h1 class="section-title reveal delay-1" style="font-size: clamp(2.5rem, 6vw, 5rem);">
+      A Story Told<br>Through <em>Light</em>
+    </h1>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════
+     BIO SECTION
+════════════════════════════════════════════════ -->
+<section class="section-padding" aria-labelledby="bio-heading">
+  <div class="about-intro">
+
+    <!-- Portrait -->
+    <div class="about-image-wrap reveal-left">
+      <div class="about-image-frame">
+        <!--
+          ➜ Replace this placeholder with your actual portrait:
+             <img src="images/about-portrait.jpg" alt="Your Name, Photographer" />
+        -->
+        <div class="img-placeholder">
+          <span style="font-size:3rem; opacity:0.15;">🖼</span>
+          <span>Your Portrait Here</span>
+        </div>
+      </div>
+      <div class="about-image-accent"></div>
+    </div>
+
+    <!-- Bio text -->
+    <div class="about-text reveal-right">
+      <p class="section-tag">Biography</p>
+      <h2 class="section-title" id="bio-heading">
+        Hello, I'm<br><em>Your Name</em>
+      </h2>
+      <div class="divider"></div>
+      <p>
+        I'm a self-taught photographer with a passion for finding quiet
+        beauty in the world around me. What began as a casual hobby —
+        a borrowed camera at a mountain trail — has grown into a
+        dedicated creative practice that shapes how I see and move
+        through life.
+      </p>
+      <p>
+        My photography spans landscapes that breathe, portraits that
+        speak, wildlife moments that pause time, and macro worlds that
+        expand the invisible. Each genre teaches me something different
+        about patience, observation, and the precise moment when
+        everything aligns.
+      </p>
+      <p>
+        Outside of photography, I'm drawn to travel, cinema, and long
+        conversations about the way light behaves just before it
+        disappears.
+      </p>
+      <div style="margin-top: 36px; display: flex; gap: 16px; flex-wrap: wrap;">
+        <a href="photographs.html" class="btn btn-gold">View My Work</a>
+        <a href="contact.html" class="btn btn-outline">Get in Touch</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     PARALLAX QUOTE
+════════════════════════════════════════════════ -->
+<section class="parallax-section" aria-label="Photography philosophy">
+  <div class="parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1920&q=80')"></div>
+  <div class="parallax-overlay" aria-hidden="true"></div>
+  <div class="parallax-content reveal">
+    <blockquote>
+      "In every photograph, I'm not just capturing a scene —<br>
+      I'm capturing the feeling of being alive inside it."
+    </blockquote>
+    <cite>— Your Name</cite>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     PHOTOGRAPHY SKILLS / INTERESTS
+════════════════════════════════════════════════ -->
+<section class="section-padding" aria-labelledby="skills-heading">
+  <div class="reveal">
+    <p class="section-tag">Specialisations</p>
+    <h2 class="section-title" id="skills-heading">Photography <em>Interests</em></h2>
+    <p class="section-subtitle">The genres I live inside — each demanding a different kind of attention.</p>
+  </div>
+
+  <div class="skills-grid" style="margin-top: 56px;">
+
+    <div class="skill-card reveal delay-1">
+      <div class="skill-icon">🏔</div>
+      <h3 class="skill-name">Landscape</h3>
+      <p class="skill-desc">
+        Dawn climbs and twilight waits. I chase the moment when the world
+        holds its breath — the precise colour temperature of first light on
+        still water, or fog threading between mountain ridges.
+      </p>
+    </div>
+
+    <div class="skill-card reveal delay-2">
+      <div class="skill-icon">🦅</div>
+      <h3 class="skill-name">Wildlife</h3>
+      <p class="skill-desc">
+        Patience measured in hours. The discipline of wildlife photography
+        has taught me more about stillness than any meditation. Every frame
+        earned through presence and respect.
+      </p>
+    </div>
+
+    <div class="skill-card reveal delay-3">
+      <div class="skill-icon">👤</div>
+      <h3 class="skill-name">Portrait</h3>
+      <p class="skill-desc">
+        A portrait is a negotiation between the seen and the unseen. I work
+        with available light to draw out something genuine — a moment of
+        vulnerability that transforms into timeless art.
+      </p>
+    </div>
+
+    <div class="skill-card reveal delay-1">
+      <div class="skill-icon">🔬</div>
+      <h3 class="skill-name">Macro</h3>
+      <p class="skill-desc">
+        An alternate universe exists at the millimetre scale. Macro
+        photography turns the ordinary — a petal, a raindrop, an insect
+        eye — into alien landscapes of extraordinary detail.
+      </p>
+    </div>
+
+    <div class="skill-card reveal delay-2">
+      <div class="skill-icon">🍽</div>
+      <h3 class="skill-name">Food</h3>
+      <p class="skill-desc">
+        Food photography is still life with warmth. The challenge is
+        translating flavour and texture into visual desire — making the
+        viewer taste the image with their eyes.
+      </p>
+    </div>
+
+    <div class="skill-card reveal delay-3">
+      <div class="skill-icon">✨</div>
+      <h3 class="skill-name">Miscellaneous</h3>
+      <p class="skill-desc">
+        Some of the best photographs refuse to be categorised. Street
+        moments, abstract light, architectural fragments — the images
+        that surprise even me.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     EQUIPMENT / GEAR
+════════════════════════════════════════════════ -->
+<section class="section-padding" style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);" aria-labelledby="gear-heading">
+  <div class="reveal">
+    <p class="section-tag">The Kit</p>
+    <h2 class="section-title" id="gear-heading">Equipment &amp; <em>Gear</em></h2>
+    <p class="section-subtitle">The tools I use to realise a vision — chosen for reliability, quality, and feel.</p>
+  </div>
+
+  <!--
+    ➜ UPDATE GEAR: Replace the equipment details below with your actual gear.
+       Each .equipment-card represents one piece of equipment.
+       Duplicate or remove cards as needed.
+  -->
+  <div class="equipment-grid" style="margin-top: 56px;">
+
+    <div class="equipment-card reveal delay-1">
+      <div class="equipment-icon">📷</div>
+      <div class="equipment-info">
+        <h4>Primary Camera</h4>
+        <p>Sony A7 IV / Canon EOS R5 — full-frame mirrorless body offering exceptional dynamic range and low-light performance for all conditions.</p>
+      </div>
+    </div>
+
+    <div class="equipment-card reveal delay-2">
+      <div class="equipment-icon">🔭</div>
+      <div class="equipment-info">
+        <h4>Telephoto Lens</h4>
+        <p>100–400mm f/4.5–5.6 GM — my reach for wildlife and compressed landscapes. Crisp across the zoom range with optical stabilisation.</p>
+      </div>
+    </div>
+
+    <div class="equipment-card reveal delay-1">
+      <div class="equipment-icon">🔍</div>
+      <div class="equipment-info">
+        <h4>Macro Lens</h4>
+        <p>90mm f/2.8 Macro — a 1:1 ratio lens that opens an entire parallel world invisible to the naked eye.</p>
+      </div>
+    </div>
+
+    <div class="equipment-card reveal delay-2">
+      <div class="equipment-icon">🌄</div>
+      <div class="equipment-info">
+        <h4>Wide Angle Lens</h4>
+        <p>16–35mm f/2.8 — the landscape workhorse. Ultra-wide perspective with edge-to-edge sharpness even wide open.</p>
+      </div>
+    </div>
+
+    <div class="equipment-card reveal delay-1">
+      <div class="equipment-icon">🎚</div>
+      <div class="equipment-info">
+        <h4>Post-Processing</h4>
+        <p>Adobe Lightroom Classic &amp; Photoshop — for RAW processing, colour grading, and the final cinematic look I'm known for.</p>
+      </div>
+    </div>
+
+    <div class="equipment-card reveal delay-2">
+      <div class="equipment-icon">📐</div>
+      <div class="equipment-info">
+        <h4>Support &amp; Accessories</h4>
+        <p>Carbon-fibre tripod, circular polariser filters, ND filter set, dual-battery grip, and weatherproof camera bag for all-terrain shooting.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     TIMELINE
+════════════════════════════════════════════════ -->
+<section class="section-padding" aria-labelledby="timeline-heading">
+  <div class="reveal">
+    <p class="section-tag">The Journey</p>
+    <h2 class="section-title" id="timeline-heading">Photography <em>Timeline</em></h2>
+    <p class="section-subtitle">Key moments in my visual journey — from the first shutter click to today.</p>
+  </div>
+
+  <!--
+    ➜ UPDATE TIMELINE: Replace years and descriptions with your own story.
+       Duplicate .timeline-item to add more milestones.
+  -->
+  <div class="timeline reveal delay-1" style="max-width: 700px; margin-top: 56px;">
+
+    <div class="timeline-item">
+      <p class="timeline-year">2018</p>
+      <h4>The First Frame</h4>
+      <p>Borrowed a friend's entry-level DSLR on a hiking trip. That single afternoon of chasing golden light through pine trees changed everything.</p>
+    </div>
+
+    <div class="timeline-item">
+      <p class="timeline-year">2019</p>
+      <h4>First Camera</h4>
+      <p>Saved up and bought my first mirrorless camera. Spent the year obsessively learning manual exposure, composition, and RAW processing.</p>
+    </div>
+
+    <div class="timeline-item">
+      <p class="timeline-year">2020</p>
+      <h4>Macro Discovery</h4>
+      <p>Locked indoors, I turned the camera on my immediate surroundings. A macro lens revealed an entire universe in my garden. My most transformative creative year.</p>
+    </div>
+
+    <div class="timeline-item">
+      <p class="timeline-year">2021</p>
+      <h4>Wildlife Expeditions</h4>
+      <p>First dedicated wildlife trip — three weeks following migratory birds across wetlands. Patience became my most important photographic skill.</p>
+    </div>
+
+    <div class="timeline-item">
+      <p class="timeline-year">2022–2023</p>
+      <h4>Expanding the Portfolio</h4>
+      <p>Formally explored portrait and food photography. Built this portfolio to document the breadth of what I love — one genre at a time.</p>
+    </div>
+
+    <div class="timeline-item">
+      <p class="timeline-year">2024–Present</p>
+      <h4>Continuing the Journey</h4>
+      <p>Still shooting, still learning. The camera remains the most honest tool I've found for paying attention to the world.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     STATISTICS MINI
+════════════════════════════════════════════════ -->
+<section class="stats-section" aria-label="Statistics">
+  <div class="stats-grid">
+    <div class="stat-item reveal">
+      <div class="stat-number" data-count="6" data-suffix="+">0</div>
+      <p class="stat-label">Years Shooting</p>
+    </div>
+    <div class="stat-item reveal delay-1">
+      <div class="stat-number" data-count="1200" data-suffix="+">0</div>
+      <p class="stat-label">Photos Taken</p>
+    </div>
+    <div class="stat-item reveal delay-2">
+      <div class="stat-number" data-count="15" data-suffix="+">0</div>
+      <p class="stat-label">Countries Visited</p>
+    </div>
+    <div class="stat-item reveal delay-3">
+      <div class="stat-number" data-count="6" data-suffix="">0</div>
+      <p class="stat-label">Genres Explored</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <h3>Your<span>Name</span></h3>
+      <p>A personal photography portfolio capturing the beauty of light, nature, and human expression.</p>
+      <div class="social-links" style="margin-top: 28px;">
+        <a href="#" class="social-link" aria-label="Instagram">&#128247;</a>
+        <a href="#" class="social-link" aria-label="500px">&#9673;</a>
+        <a href="#" class="social-link" aria-label="Flickr">&#128248;</a>
+        <a href="#" class="social-link" aria-label="Twitter/X">&#120143;</a>
+        <a href="#" class="social-link" aria-label="YouTube">&#9654;</a>
+      </div>
+    </div>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <h4>Navigation</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="photographs.html">Photographs</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <nav class="footer-nav" aria-label="Gallery categories">
+      <h4>Gallery</h4>
+      <a href="photographs.html">Portrait</a>
+      <a href="photographs.html">Landscape</a>
+      <a href="photographs.html">Wildlife</a>
+      <a href="photographs.html">Macro</a>
+      <a href="photographs.html">Food</a>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">&copy; 2025 Your Name. All rights reserved.</p>
+    <p class="footer-copy" style="font-style: italic; font-family: var(--font-serif);">Made with light &amp; love.</p>
+  </div>
+</footer>
+
+<button id="back-top" aria-label="Back to top">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>

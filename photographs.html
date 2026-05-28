@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Photography gallery — portrait, landscape, food, wildlife, macro, and miscellaneous photographs." />
+  <title>Photographs — Your Name Photography</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📷</text></svg>" />
+</head>
+<body>
+
+<!-- Loader -->
+<div id="loader" role="status" aria-label="Loading">
+  <div class="loader-logo">YN</div>
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+  <p class="loader-text">Gallery</p>
+</div>
+
+<!-- Cursor -->
+<div id="cursor-dot"  aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
+
+<!-- Page Transition -->
+<div class="page-transition-overlay" aria-hidden="true"></div>
+
+<!-- ═══════════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════════════ -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Your<span>Name</span></a>
+  <ul class="nav-links" role="list">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="photographs.html" class="active">Photographs</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="nav-mobile" role="dialog" aria-label="Mobile navigation">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="photographs.html">Photographs</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     PAGE HERO
+════════════════════════════════════════════════ -->
+<header class="page-hero" role="banner">
+  <div class="page-hero-bg-text" aria-hidden="true">Gallery</div>
+  <div>
+    <p class="section-tag reveal">The Collection</p>
+    <h1 class="section-title reveal delay-1" style="font-size: clamp(2.5rem, 6vw, 5rem);">
+      Every Frame<br>a <em>Story</em>
+    </h1>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════
+     GALLERY FILTER
+════════════════════════════════════════════════ -->
+<section class="section-padding" style="padding-bottom: 20px;" aria-label="Gallery">
+
+  <!-- Category filter buttons -->
+  <div class="gallery-controls" role="group" aria-label="Filter by category">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="portrait">Portrait</button>
+    <button class="filter-btn" data-filter="landscape">Landscape</button>
+    <button class="filter-btn" data-filter="food">Food</button>
+    <button class="filter-btn" data-filter="wildlife">Wildlife</button>
+    <button class="filter-btn" data-filter="macro">Macro</button>
+    <button class="filter-btn" data-filter="misc">Miscellaneous</button>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       GALLERY GRID
+       ═══════════════════════════════════════════
+       HOW TO ADD A NEW PHOTO:
+       ─────────────────────────────────────────
+       1. Copy one of the .photo-card blocks below
+       2. Set data-category to one of:
+             portrait | landscape | food | wildlife | macro | misc
+       3. Replace the <img src="..."> with your image path, e.g.:
+             src="images/my-photo.jpg"
+          (Create an /images/ folder in your repo and upload photos there)
+       4. Set alt text describing the photo
+       5. Update .photo-card-title text
+       6. Update .photo-card-preview (2 lines max, shown by default)
+       7. Update the text inside .photo-card-full (shown on "Read More")
+       8. Save and push to GitHub
+       ═══════════════════════════════════════════ -->
+  <div class="gallery-grid" id="gallery-grid" role="list">
+
+    <!-- ────────────────────────────────────────
+         PORTRAIT CARDS
+         ──────────────────────────────────────── -->
+
+    <!-- PORTRAIT CARD 1
+         ➜ Replace src with your image path: src="images/portrait-1.jpg" -->
+    <article class="photo-card" data-category="portrait" role="listitem">
+      <div class="photo-card-img" data-cursor-expand>
+        <img
+          src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=700&q=80"
+          alt="Portrait of a woman in soft golden light"
+          loading="lazy"
+        />
+        <div class="photo-overlay" aria-hidden="true">
+          <div class="overlay-zoom">⊕</div>
+        </div>
+      </div>
+      <div class="photo-card-body">
+        <p class="photo-card-category">Portrait</p>
+        <h2 class="photo-card-title">Golden Reverie</h2>
+        <p class="photo-card-preview">
+          Diffused afternoon light through a linen curtain. The subject's gaze carries a quiet solitude that words can't contain.
+        </p>
+        <p class="photo-card-full">
+          This portrait was captured in a small, west-facing studio room at 4:47 PM in late September. The sun had just dipped below the roofline across the street, scattering soft, diffused light through a sheer linen curtain. No reflector. No artificial fill. Just ambient warmth and the subject's willingness to be still. Shot at f/1.8 on an 85mm lens, the shallow depth of field renders the background as a soft, breathing wash of cream and ochre — drawing every eye back to the face, and the story written there.
+        </p>
+        <button class="read-more-btn" aria-expanded="false">Read More</button>
+      </div>
+    </article>
+
+    <!-- PORTRAIT CARD 2 -->
+    <article class="photo-card" data-category="portrait" role="listitem">
+      <div class="photo-card-img" data-cursor-expand>
+        <img
+          src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=700&q=80"
+          alt="Close up portrait with dramatic side lighting"
+          loading="lazy"
+        />
+        <div class="photo-overlay" aria-hidden="true">
+          <div class="overlay-zoom">⊕</div>
+        </div>
+      </div>
+      <div class="photo-card-body">
+        <p class="photo-card-category">Portrait</p>
+        <h2 class="photo-card-title">Half Light</h2>
+        <p class="photo-card-preview">
+          Rembrandt lighting in a dark room. One narrow window, one face, and the drama of shadow.
+        </p>
+        <p class="photo-card-full">
+          Rembrandt lighting — named for the Dutch master's signature triangle of light beneath one eye — is one of the most emotionally resonant lighting techniques in portrait photography. Here, a single tall window acted as a strip softbox, positioned at roughly 45° to the subject. The result: one side of the face fully illuminated, the other retreating into shadow, with that iconic small triangle of catchlight. Shot on a 50mm prime at f/2, this image explores the idea that what is hidden often says more than what is shown.
+        </p>
+        <button class="read-more-btn" aria-expanded="false">Read More</button>
+      </div>
+    </article>
+
+    <!-- ────────────────────────────────────────
+         LANDSCAPE CARDS
+         ──────────────────────────────────────── -->
+
+    <!-- LANDSCAPE CARD 1 -->
+    <article class="photo-card" data-category="landscape" role="listitem">
+      <div class="photo-card-img" data-cursor-expand>
+        <img
+          src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&q=80"
+          alt="Mountain peaks at sunrise"
+          loading="lazy"
+        />
+        <div class="photo-overlay" aria-hidden="true">
+          <div class="overlay-zoom">⊕</div>
+        </div>
+      </div>
+      <div class="photo-card-body">
+        <p class="photo-card-category">Landscape</p>
+        <h2 class="photo-card-title">First Light</h2>
+        <p class="photo-card-preview">
+          Summit at 4,200m. The mountains turned rose-gold for exactly eleven minutes before the full sun arrived and the magic dissolved.
+        </p>
+        <p class="photo-card-full">
+          I arrived at the viewpoint at 4:15 AM, two hours before civil twilight. The trail was unmarked, the temperature was −4°C, and I genuinely wasn't certain I had the right ridge. What followed was one of the most patient waits of my life — camera mounted, exposure bracketed, watching the horizon through frosted breath. For eleven minutes beginning at 6:22 AM, the peaks turned a shade of warm rose-gold that exists nowhere in any colour swatch I've ever seen. This frame was captured at 6:27, as the first direct ray caught the highest snowfield. 16mm, f/11, 1/30s, ISO 100.
+        </p>
+        <button class="read-more-btn" aria-expanded="false">Read More</button>
+      </div>
+    </article>
+
+    <!-- LANDSCAPE CARD 2 -->
+    <article class="photo-card" data-category="landscape" role="listitem">
+      <div class="photo-card-img" data-cursor-expand>
+        <img
+          src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=700&q=80"
+          alt="Misty valley at dawn"
+          loading="lazy"
+        />
+        <div class="photo-overlay" aria-hidden="true">
+          <div class="overlay-zoom">⊕</div>
+        </div>
+      </div>
+      <div class="photo-card-body">
+        <p class="photo-card-category">Landscape</p>
+        <h2 class="photo-card-title">Valley Fog</h2>
+        <p class="photo-card-preview">
+          Early morning river valley blanketed in fog. The treeline breaks like islands in a pale sea.
+        </p>
+        <p class="photo-card-full">
+          Fog photography requires an overnight weather forecast habit that borders on obsession. This particular morning came after a clear, cold night following a day of rain — the ideal recipe for radiation fog settling into river valleys. I positioned above the valley rim at pre-dawn, knowing the mist would burn off within the hour. The image was captured in that brief window when the rising sun lit the fog from above but hadn't yet dissolved it — a 20-minute shooting window at most. Processed in Lightroom with deliberate restraint: reduced vibrance, lifted shadows, and a slight cool shift to preserve the quiet melancholy of the scene.
+        </p>
+        <button class="read-more-btn" aria-expanded="false">Read More</button>
+      </div>
+    </article>
+
+    <!-- LANDSCAPE CARD 3 -->
+    <article class="photo-card" data-category="landscape" role="listitem">
+      <div class="photo-card-img" data-cursor-expand>
+        <img
+          src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=700&q=80"
+          alt="Ocean coastline at sunset"
+          loading="lazy"
+        />
+        <div class="photo-overlay" aria-hidden="true">
+          <div class="overlay-zoom">⊕</div>
+        </div>
+      </div>
+      <div class="photo-card-body">
+        <p class="photo-card-category">Landscape</p>
+        <h2 class="photo-card-title">Coastal Dusk</h2>
+        <p class="photo-card-preview">
+          A long-exposure seascape at blue hour. Waves smoothed to silk, rocks grounded against the motion.
+        </p>
+        <p class="photo-card-full">
+          Long-exposure coastal photography is a meditation on contrast: the absolute stillness demanded by the camera set against the relentless movement of the ocean. A 10-stop ND filter allowed a 30-second exposure at blue hour, transforming the churning surf into smooth, misty trails that wrap around the foreground rocks like breath. The trick here was finding foreground elements with enough visual weight to anchor the ethereal motion above — these sea-worn boulders, black and fixed, do exactly that. Tripod. Remote shutter. Patience.
+        </p>
+        <button class="read-more-btn" aria-expanded="false">Read More</button>
+      </div>
+    </article>
+
+    <!-- ────────────────────────────────────────
+         FOOD CARDS
+         ──────────────────────────────────────── -->
+
+    <!-- FOOD CARD 1 -->
+    <article class="photo-card" data-category="food" role="listitem">
+      <div class="photo-card-img" data-cursor-expand>
+        <img
+          src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=700&q=80"
+          alt="Artisan food plating on dark slate"
+          loading="lazy"
+        />
+        <div class="photo-overlay" aria-hidden="true">
+          <div class="overlay-zoom">⊕</div>
+        </div>
+      </div>
+      <div class="photo-card-body">
+        <p class="photo-card-category">Food</p>
+        <h2 class="photo-card-title">Dark Slate</h2>
+        <p class="photo-card-preview">
+          Moody overhead food photography on a dark slate background. The colours sing against the shadows.
+        </p>
+        <p class="photo-card-full">
+          This food image was part of a personal project exploring "dark and moody" food photography — a style that prioritises atmosphere over the bright, high-key approach common in commercial food work. A single window source from camera-left was modified with a large diffusion panel. A dark slate board and charcoal linen napkin were chosen to keep the mood consistent. The challenge in dark food photography is maintaining enough contrast to define textures without over-lighting and destroying the intimacy of the scene. Shot at 50mm from directly overhead, f/5.6 to retain full sharpness across the plate.
+        </p>
+        <button class="read-more-btn" aria-expanded="false">Read More</button>
+      </div>
+    </article>
+
+    <!-- FOOD CARD 2 -->
+    <article class="photo-card" data-category="food" role="listitem">
+      <div class="photo-card-img" data-cursor-expand>
+        <img
+          src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=700&q=80"
+          alt="Colourful breakfast spread"
+          loading="lazy"
+        />
+        <div class="photo-overlay" aria-hidden="true">
+          <div class="overlay-zoom">⊕</div>
+        </div>
+      </div>
+      <div class="photo-card-body">
+        <p class="photo-card-category">Food</p>
+        <h2 class="photo-card-title">Morning Ritual</h2>
+        <p class="photo-card-preview">
+          A breakfast composition in natural light. The warmth of morning and the comfort of ritual in a single frame.
+        </p>
+        <p class="photo-card-full">
+          Shot entirely in available window light on a Sunday morning before anyone else in the house was awake. This image wasn't styled in the traditional sense — it was assembled from the actual breakfast, rearranged slightly for visual balance and colour flow. The key decision was the angle: a high 3/4 view (around 60° from horizontal) that reveals the full spread while keeping a sense of depth and intimacy. The soft shadows cast by the cup and jug add visual rhythm and tell a story about time of day that a flat overhead shot simply cannot.
+        </p>
+        <button class="read-more-btn" aria-expanded="false">Read More</button>
+      </div>
+    </article>
+
+    <!-- ────────────────────────────────────────
+         WILDLIFE CARDS
+         ──────────────────────────────────────── -->
+
+    <!-- WILDLIFE CARD 1 -->
+    <article class="photo-card" data-category="wildlife" role="listitem">
+      <div class="photo-card-img" data-cursor-expand>
+        <img
+          src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=700&q=80"
+          alt="Fox portrait in the snow"
+          loading="lazy"
+        />
+        <div class="photo-overlay" aria-hidden="true">
+          <div class="overlay-zoom">⊕</div>
+        </div>
+      </div>
+      <div class="photo-card-body">
+        <p class="photo-card-category">Wildlife</p>
+        <h2 class="photo-card-title">Still Hunter</h2>
+        <p class="photo-card-preview">
+          A red fox pauses at the edge of a snow-covered clearing. Two hours of waiting, one perfect moment.
+        </p>
+        <p class="photo-card-full">
+          This image required two mornings of preparatory observation before the photograph was even attempted. On the first morning, I mapped the fox's likely approach paths through a field margin adjacent to a small woodland. On the second, I arrived 90 minutes before dawn, set up in a natural ground hide using dried bracken and a camo tarp, and waited. The fox appeared at 7:54 AM, paused exactly where I had anticipated — at the junction of two scent trails — and turned to face me for approximately four seconds. Four frames. This one. 400mm, f/5.6, 1/800s, ISO 800.
+        </p>
+        <button class="read-more-btn" aria-expanded="false">Read More</button>
+      </div>
+    </article>
+
+    <!-- WILDLIFE CARD 2 -->
+    <article class="photo-card" data-category="wildlife" role="listitem">
+      <div class="photo-card-img" data-cursor-expand>
+        <img
+          src="https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?w=700&q=80"
+          alt="Kingfisher perched on a branch"
+          loading="lazy"
+        />
+        <div class="photo-overlay" aria-hidden="true">
+          <div class="overlay-zoom">⊕</div>
+        </div>
+      </div>
+      <div class="photo-card-body">
+        <p class="photo-card-category">Wildlife</p>
+        <h2 class="photo-card-title">Electric Blue</h2>
+        <p class="photo-card-preview">
+          A kingfisher on its favourite perch above a narrow river channel. The iridescent plumage almost defies belief.
+        </p>
+        <p class="photo-card-full">
+          The kingfisher is among the most photogenic birds in temperate habitats — and among the most challenging to photograph well. Their perches are predictable; their patience with observers, less so. I identified this individual's preferred hunting branch over the course of a week's observation, then approached slowly from downstream over three separate mornings. On the third, the bird remained for nearly twenty minutes — long enough to capture a variety of poses and even the explosive dive into the water below. This perch portrait was taken at 1/1000s to freeze any movement while the bird scanned the surface for fish.
+        </p>
+        <button class="read-more-btn" aria-expanded="false">Read More</button>
+      </div>
+    </article>
+
+    <!-- ────────────────────────────────────────
+         MACRO CARDS
+         ──────────────────────────────────────── -->
+
+    <!-- MACRO CARD 1 -->
+    <article class="photo-card" data-category="macro" role="listitem">
+      <div class="photo-card-img" data-cursor-expand>
+        <img
+          src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80"
+          alt="Water droplets on a spider web"
+          loading="lazy"
+        />
+        <div class="photo-overlay" aria-hidden="true">
+          <div class="overlay-zoom">⊕</div>
+        </div>
+      </div>
+      <div class="photo-card-body">
+        <p class="photo-card-category">Macro</p>
+        <h2 class="photo-card-title">Dew Architecture</h2>
+        <p class="photo-card-preview">
+          Morning dew suspended on a garden spider web. Each droplet acts as a tiny lens, holding a world within a world.
+        </p>
+        <p class="photo-card-full">
+          Spider webs adorned with morning dew are one of the most rewarding subjects in macro photography — and one of the most fleeting. The window is perhaps 45 minutes after dawn on a still morning, before any breeze disturbs the droplets. I used a 90mm macro lens with a focusing rail for precise 1:1 positioning, handheld to allow micro-adjustments between frames. The key creative decision was the background: by positioning the camera so that a shaft of early sunlight struck the out-of-focus foliage behind the web, I created a warm, glowing bokeh that makes the foreground droplets read as luminous jewels rather than simply water.
+        </p>
+        <button class="read-more-btn" aria-expanded="false">Read More</button>
+      </div>
+    </article>
+
+    <!-- MACRO CARD 2 -->
+    <article class="photo-card" data-category="macro" role="listitem">
+      <div class="photo-card-img" data-cursor-expand>
+        <img
+          src="https://images.unsplash.com/photo-1490750967868-88df5691cc1e?w=700&q=80"
+          alt="Close up of flower petals with dew"
+          loading="lazy"
+        />
+        <div class="photo-overlay" aria-hidden="true">
+          <div class="overlay-zoom">⊕</div>
+        </div>
+      </div>
+      <div class="photo-card-body">
+        <p class="photo-card-category">Macro</p>
+        <h2 class="photo-card-title">Petal Study</h2>
+        <p class="photo-card-preview">
+          The intimate interior of a garden rose. Macro reveals the architecture that the eye takes for granted.
+        </p>
+        <p class="photo-card-full">
+          Flower macro photography rewards the photographer who slows down enough to see what the human eye smooths over. At 1:1 magnification, the surface of a petal reveals translucent membranes, geometric cell structures, and gradients of colour that shift from coral to cream within a single millimetre. This rose was shot on a still morning in a north-facing garden bed — soft, even, directional light with no harsh shadows. Focus was stacked across five frames in post-processing to extend the depth of field while maintaining the painterly quality of the out-of-focus areas. A gentle misting of water from a spray bottle added the dew droplets.
+        </p>
+        <button class="read-more-btn" aria-expanded="false">Read More</button>
+      </div>
+    </article>
+
+    <!-- ────────────────────────────────────────
+         MISCELLANEOUS CARDS
+         ──────────────────────────────────────── -->
+
+    <!-- MISC CARD 1 -->
+    <article class="photo-card" data-category="misc" role="listitem">
+      <div class="photo-card-img" data-cursor-expand>
+        <img
+          src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=700&q=80"
+          alt="London bridge at blue hour"
+          loading="lazy"
+        />
+        <div class="photo-overlay" aria-hidden="true">
+          <div class="overlay-zoom">⊕</div>
+        </div>
+      </div>
+      <div class="photo-card-body">
+        <p class="photo-card-category">Miscellaneous</p>
+        <h2 class="photo-card-title">City at Dusk</h2>
+        <p class="photo-card-preview">
+          A city bridge at blue hour. The lamp-lit stone glows against a deepening indigo sky.
+        </p>
+        <p class="photo-card-full">
+          Urban photography at blue hour offers a brief but spectacular window when the ambient sky light and artificial city lights reach an equilibrium — neither overpowering the other. This frame was planned using PhotoPills to calculate the exact direction of twilight and the moment when the exposure values would balance. Shot from a position 12 metres below the bridge on the riverbank, the low angle dramatises the architecture and gives the viewer a sense of being beneath something vast. The 8-second exposure smoothed the river surface to a dark mirror while holding the warmth of the bridge lamps. 24mm, f/8, ISO 200.
+        </p>
+        <button class="read-more-btn" aria-expanded="false">Read More</button>
+      </div>
+    </article>
+
+    <!-- MISC CARD 2 -->
+    <article class="photo-card" data-category="misc" role="listitem">
+      <div class="photo-card-img" data-cursor-expand>
+        <img
+          src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=700&q=80"
+          alt="Forest path in autumn"
+          loading="lazy"
+        />
+        <div class="photo-overlay" aria-hidden="true">
+          <div class="overlay-zoom">⊕</div>
+        </div>
+      </div>
+      <div class="photo-card-body">
+        <p class="photo-card-category">Miscellaneous</p>
+        <h2 class="photo-card-title">Amber Path</h2>
+        <p class="photo-card-preview">
+          An autumn forest path dappled with fallen leaves. There is melancholy in beauty that won't last.
+        </p>
+        <p class="photo-card-full">
+          There is a specific window of about 10–14 days in any deciduous forest when the colour reaches its absolute peak before the cold strips everything bare. I try to visit the same location each year in late October, watching the colour shift from green through yellow to copper to rust. This frame was captured on what turned out to be the final dry morning of a wet autumn — the leaves would be down within 48 hours. The leading lines of the path draw the eye deep into the frame, while the dappled light filtering through the overhead canopy adds a quality of gentle mystery. Shot at 35mm at eye level rather than from above, which preserves the sense of actually standing inside the forest rather than observing it.
+        </p>
+        <button class="read-more-btn" aria-expanded="false">Read More</button>
+      </div>
+    </article>
+
+    <!-- ════════════════════════════════════════
+         ➜ ADD NEW PHOTOS HERE
+            Copy a .photo-card block above,
+            set the correct data-category,
+            update the img src, title, and text.
+         ════════════════════════════════════════ -->
+
+  </div><!-- /.gallery-grid -->
+
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     LIGHTBOX
+════════════════════════════════════════════════ -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+  <div class="lightbox-img-wrap">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close lightbox">✕</button>
+    <img id="lightbox-img" src="" alt="" />
+    <p class="lightbox-caption" id="lightbox-caption"></p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <h3>Your<span>Name</span></h3>
+      <p>A personal photography portfolio capturing the beauty of light, nature, and human expression.</p>
+      <div class="social-links" style="margin-top: 28px;">
+        <a href="#" class="social-link" aria-label="Instagram">&#128247;</a>
+        <a href="#" class="social-link" aria-label="500px">&#9673;</a>
+        <a href="#" class="social-link" aria-label="Flickr">&#128248;</a>
+        <a href="#" class="social-link" aria-label="Twitter/X">&#120143;</a>
+        <a href="#" class="social-link" aria-label="YouTube">&#9654;</a>
+      </div>
+    </div>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <h4>Navigation</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="photographs.html">Photographs</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <nav class="footer-nav" aria-label="Gallery categories">
+      <h4>Gallery</h4>
+      <a href="photographs.html">Portrait</a>
+      <a href="photographs.html">Landscape</a>
+      <a href="photographs.html">Wildlife</a>
+      <a href="photographs.html">Macro</a>
+      <a href="photographs.html">Food</a>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">&copy; 2025 Your Name. All rights reserved.</p>
+    <p class="footer-copy" style="font-style: italic; font-family: var(--font-serif);">Made with light &amp; love.</p>
+  </div>
+</footer>
+
+<button id="back-top" aria-label="Back to top">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>
